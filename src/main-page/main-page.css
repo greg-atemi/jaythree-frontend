@@ -32,3 +32,38 @@
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+.topbar{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row-reverse;
+    font-family: Inter, sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 32px;
+}
+
+.pill{
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    background-color: #ffffff;
+    border-radius: 24px;
+    margin-right: 40px;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.big{
+    font-family: Inter, sans-serif;
+    font-size: 36px;
+}
+
+.main2{
+    display: flex;
+    padding-top: 40px;
+    padding-left: 40px;
+    margin-left: 20%;
+}
