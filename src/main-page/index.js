@@ -1,25 +1,19 @@
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './main-page.css';
 import Sidebar from "./sidebar";
-// import { useEffect, useState, useMemo } from 'react';
-// import FeaturedHouse from "./featured-house";
-// import Header from "./header";
-// import * as PropTypes from "prop-types";
-// import SearchResults from "../search-results";
-// import HouseFilter from "./house-filter";
-// import HouseFromQuery from "../house/HouseFromQuery";
-// import useHouses from "../hooks/useHouses";
-// import useFeaturedHouse from "../hooks/useFeatuedHouse";
-// import HouseContext from "../context/housesContext";
+import Topbar from "./topbar";
+import Dashboard from "./dashboard";
 
 function Index() {
     return (
         <Router>
             <div className="container">
-                <Switch>
-                    <Route path="/">
-                    </Route>
-                </Switch>
+                <Sidebar />
+                <Topbar />
+                <Routes>
+                    <Route path="/" element={<Dashboard/>}/>
+                    {/*<Route path="/products" element={<Products/>}/>*/}
+                </Routes>
             </div>
         </Router>
     );

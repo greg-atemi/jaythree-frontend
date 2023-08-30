@@ -1,9 +1,9 @@
 import './App.css';
-import Sidebar from "./main-page/sidebar";
+import MainPage from "./main-page";
 
 function App() {
   return (
-    <Sidebar> </Sidebar>
+    <MainPage />
   );
 }
 
