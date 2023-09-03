@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "Name": "FAXE",
+      "Quantity": "23",
+      "UnitPrice": "2500",
+      "Description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "id": 2,
+      "Name": "Amarula",
+      "Quantity": "12",
+      "UnitPrice": "3700",
+      "Description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "id": 3,
+      "Name": "Chrome GIN",
+      "Quantity": "50",
+      "UnitPrice": "1000",
+      "Description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "id": 4,
+      "Name": "Gilbeys",
+      "Quantity": "15",
+      "UnitPrice": "2500",
+      "Description": "Lorem ipsum dolor sit amet"
+    }
+  ]
+}

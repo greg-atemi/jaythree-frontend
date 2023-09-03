@@ -5,15 +5,20 @@ import edit from "../images/Edit.svg";
 import Delete from "../images/Delete.svg";
 import CreateProduct from "./createProduct";
 import axios from "axios";
+import CustomModal from "./createProduct";
 
 function PlusButton() {
+    const [show, setShow] = useState(false);
     return (
-        <button id="new" className="btn-primary">
-            <Link to="/createProduct">
-                <img alt="home" src={plus}/>
-                ADD NEW
-            </Link>
-        </button>
+        <>
+            <button onClick={() => setShow(true)} className="btn-primary">
+                {/*<Link to="/createProduct">*/}
+                    <img alt="home" src={plus}/>
+                    ADD NEW
+                {/*</Link>*/}
+            </button>
+            <CustomModal onClose={() => setShow(false)} show={show} />
+        </>
     )
 }
 
