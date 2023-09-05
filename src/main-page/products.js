@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
 import plus from "../images/plus.svg";
 import edit from "../images/Edit.svg";
 import Delete from "../images/Delete.svg";
 import CreateProduct from "./createProduct";
 import axios from "axios";
 import CustomModal from "./createProduct";
+import {Link} from "react-router-dom";
 
 function PlusButton() {
-    const [show, setShow] = useState(false);
+    const [showcreate, setShowCreate] = useState(false);
+
     return (
         <>
-            <button onClick={() => setShow(true)} className="btn-primary">
-                {/*<Link to="/createProduct">*/}
-                    <img alt="home" src={plus}/>
-                    ADD NEW
-                {/*</Link>*/}
+            <button onClick={() => setShowCreate(true)} className="btn-primary">
+                <img alt="home" src={plus}/>
+                ADD NEW
             </button>
-            <CustomModal onClose={() => setShow(false)} show={show} />
+            <CustomModal onClose={() => setShowCreate(false)} show={showcreate} />
         </>
     )
 }
 
 function ProductsTable() {
-    const [ columns, setColumns ] = useState([])
-    const [ records, setRecords ] = useState([])
+    const [ columns, setColumns ] = useState([]);
+    const [ records, setRecords ] = useState([]);
 
     useEffect(()=> {
         axios.get('http://localhost:3030/products').then(res => {
@@ -32,6 +31,7 @@ function ProductsTable() {
             setRecords(res.data)
         })
     }, [])
+
     return (
         <table className="product">
             <thead>
@@ -50,6 +50,10 @@ function ProductsTable() {
                             <td>{d.Quantity}</td>
                             <td>{d.UnitPrice}</td>
                             <td>{d.Description}</td>
+                            <td style={{display: "flex"}}>
+                                <Link to={`/product/update/${d.id}`} className="btn-primary"> Update </Link>
+                                {/*<button onClick={() => setShowEdit(true)} className="btn-primary">Edit</button>*/}
+                            </td>
                         </tr>
                     ))
                 }
