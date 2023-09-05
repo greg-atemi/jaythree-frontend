@@ -190,3 +190,25 @@ td .icon{
     font-size: 14px;
     font-family: Inter, sans-serif;
 }
+
+thead th{
+    padding: 12px 24px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    background-color: #F9FAFB;
+}
+
+tbody tr{
+    border-bottom: 1px solid #ced0d4;
+}
+
+td{
+    font-family: Inter, sans-serif;
+    padding: 12px 32px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+td .icon{
+    margin-right: 16px;
+}

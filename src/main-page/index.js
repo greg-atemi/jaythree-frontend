@@ -4,7 +4,7 @@ import Sidebar from "./sidebar";
 import Topbar from "./topbar";
 import Dashboard from "./dashboard";
 import Products from "./products";
-import CreateProduct from "./createProduct";
+import UpdateProduct from "./updateProduct";
 
 function Index() {
     return (
@@ -15,7 +15,7 @@ function Index() {
                 <Routes>
                     <Route path="/" element={<Dashboard/>} />
                     <Route path="/products" element={<Products/>} />
-                    <Route path="/createProduct" element={<CreateProduct/>} />
+                    <Route path="/product/update/:id" element={<UpdateProduct/>} />
                 </Routes>
             </div>
         </Router>
