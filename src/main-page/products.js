@@ -5,7 +5,7 @@ import Delete from "../images/Delete.svg";
 import CreateProduct from "./createProduct";
 import axios from "axios";
 import CustomModal from "./createProduct";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function PlusButton() {
     const [showcreate, setShowCreate] = useState(false);
@@ -24,6 +24,7 @@ function PlusButton() {
 function ProductsTable() {
     const [ columns, setColumns ] = useState([]);
     const [ records, setRecords ] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(()=> {
         axios.get('http://localhost:3030/products').then(res => {
@@ -52,7 +53,7 @@ function ProductsTable() {
                             <td>{d.Description}</td>
                             <td style={{display: "flex"}}>
                                 <Link to={`/product/update/${d.id}`} className="btn-primary"> Update </Link>
-                                {/*<button onClick={() => setShowEdit(true)} className="btn-primary">Edit</button>*/}
+                                <button onClick={e => handleDelete(d.id)} className="btn-primary">Delete</button>
                             </td>
                         </tr>
                     ))
@@ -60,6 +61,17 @@ function ProductsTable() {
             </tbody>
         </table>
     )
+
+    function handleDelete(id){
+        const conf = window.confirm("Do you want to delete?");
+        if(conf){
+            axios.delete('http://localhost:3030/products/'+id)
+                .then(res=>{
+                    alert('record has been deleted');
+                    navigate('/products')
+                }).catch(err => console.log(err))
+        }
+    }
 }
 
 export default function Products() {

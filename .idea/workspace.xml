@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="daec98be-9301-4f4a-848e-1e9dc888856b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main-page/updateProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main-page/createProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-page/createProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main-page/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-page/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main-page/main-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-page/main-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main-page/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main-page/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +102,8 @@
       <workItem from="1693734411923" duration="1684000" />
       <workItem from="1693742394841" duration="15903000" />
       <workItem from="1693804920242" duration="290000" />
-      <workItem from="1693943510515" duration="6538000" />
+      <workItem from="1693943510515" duration="6977000" />
+      <workItem from="1694277316600" duration="2097000" />
     </task>
     <servers />
   </component>
