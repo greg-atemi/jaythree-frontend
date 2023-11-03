@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import plus from "../images/plus.svg";
-import edit from "../images/Edit.svg";
-import Delete from "../images/Delete.svg";
-import CreateProduct from "./createProduct";
 import axios from "axios";
-import CustomModal from "./createProduct";
-import {Link, useNavigate} from "react-router-dom";
+import CreateModal from "./createProduct";
+import UpdateModal from "./updateProduct";
+import {useNavigate} from "react-router-dom";
 
 function PlusButton() {
     const [showcreate, setShowCreate] = useState(false);
@@ -16,15 +14,16 @@ function PlusButton() {
                 <img alt="home" src={plus}/>
                 ADD NEW
             </button>
-            <CustomModal onClose={() => setShowCreate(false)} show={showcreate} />
+            <CreateModal onClose={() => setShowCreate(false)} show={showcreate} />
         </>
     )
 }
 
-function ProductsTable() {
+function ProductsTable(props){
     const [ columns, setColumns ] = useState([]);
     const [ records, setRecords ] = useState([]);
     const navigate = useNavigate();
+    const [showupdate, setShowUpdate] = useState(false);
 
     useEffect(()=> {
         axios.get('http://localhost:3030/products').then(res => {
@@ -34,6 +33,7 @@ function ProductsTable() {
     }, [])
 
     return (
+        <>
         <table className="product">
             <thead>
                 <tr>
@@ -52,14 +52,19 @@ function ProductsTable() {
                             <td>{d.UnitPrice}</td>
                             <td>{d.Description}</td>
                             <td style={{display: "flex"}}>
-                                <Link to={`/product/update/${d.id}`} className="btn-primary"> Update </Link>
-                                <button onClick={e => handleDelete(d.id)} className="btn-primary">Delete</button>
+                                {/*<Link to={`/product/update/${d.id}`} className="btn-primary"> Update </Link>*/}
+                                <button onLoad={() => props=d} onClick={() => setShowUpdate(true)} className="btn-primary">
+                                    UPDATE
+                                </button>
+                                <button onClick={e => handleDelete(d.id)} className="btn-primary">DELETE</button>
                             </td>
                         </tr>
                     ))
                 }
             </tbody>
         </table>
+        <UpdateModal onClose={() => setShowUpdate(false)} show={showupdate}/>
+        </>
     )
 
     function handleDelete(id){
@@ -79,7 +84,7 @@ export default function Products() {
         <div className="main">
             <PlusButton />
             <ProductsTable />
-            <CreateProduct />
+            <CreateModal />
         </div>
     );
 }
