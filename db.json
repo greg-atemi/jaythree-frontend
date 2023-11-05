@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": 2,
-      "Name": "Amarula",
-      "Quantity": "12",
-      "UnitPrice": "3700",
-      "Description": "Lorem ipsum dolor sit amet"
-    },
-    {
       "id": 3,
       "Name": "Chrome GIN",
       "Quantity": "50",
@@ -34,6 +27,13 @@
       "Quantity": "26",
       "UnitPrice": "1500",
       "Description": "Tei ya TZ"
+    },
+    {
+      "id": 8,
+      "Name": "Best Gin 250ml",
+      "Quantity": "20",
+      "UnitPrice": "350",
+      "Description": "The best gin"
     }
   ]
 }
