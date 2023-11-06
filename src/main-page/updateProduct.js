@@ -1,4 +1,4 @@
-import {useNavigate, useParams} from 'react-router-dom';
+import {Link, useNavigate, useParams} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
@@ -22,10 +22,6 @@ const UpdateModal = props => {
                 navigate('/products');
             }
         ).catch(err => console.log(err));
-    }
-
-    if(!props.show){
-        return null
     }
 
     return (
@@ -65,10 +61,9 @@ const UpdateModal = props => {
 
                         <div className="button-group">
                             <input className="btn-primary" type="submit" value="SAVE"/>
-                            {/*<Link to={"/products"}>*/}
-                            {/*    <button type="button" className="btn-secondary">CANCEL</button>*/}
-                            {/*</Link>*/}
-                            <button onClick={props.onClose} type="button" className="btn-secondary">CANCEL</button>
+                            <Link to={"/products"}>
+                                <button type="button" className="btn-secondary">CANCEL</button>
+                            </Link>
                         </div>
                     </form>
                 </div>
