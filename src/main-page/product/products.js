@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import plus from "../images/plus.svg";
+import plus from "./images/plus.svg";
 import axios from "axios";
 import CreateModal from "./createProduct";
 import UpdateModal from "./updateProduct";
