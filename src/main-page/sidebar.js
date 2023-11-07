@@ -12,7 +12,7 @@ function NavList(){
         {id: 1, name: "Dashboard", path:"/", src: home},
         {id: 2, name: "Product", path:"/products", src: box},
         {id: 3, name: "POS", src: pos},
-        {id: 4, name: "Stock", src: stock},
+        {id: 4, name: "Stock", path:"/stock", src: stock},
         {id: 5, name: "Sales", src: sales},
         {id: 6, name: "Daily Reports", src: report},
         {id: 7, name: "Weekly Reports", src: report},

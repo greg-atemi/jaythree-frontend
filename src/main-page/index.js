@@ -5,6 +5,7 @@ import Sidebar from "./sidebar";
 import Topbar from "./topbar";
 import Dashboard from "./dashboard";
 import Stock from './stock/stocks';
+import AddStock from './stock/addStock';
 import Products from './product/products';
 import UpdateProduct from "./product/updateProduct";
 
@@ -19,6 +20,7 @@ function Index() {
                     <Route path="/products" element={<Products/>} />
                     <Route path="/stock" element={<Stock/>} />
                     <Route path="/product/update/:id" element={<UpdateProduct/>} />
+                    <Route path="/stock/add/:id" element={<AddStock/>} />
                 </Routes>
             </div>
         </Router>

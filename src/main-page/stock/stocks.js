@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import plus from "./images/plus.svg";
 import axios from "axios";
-// import CreateModal from "./createProduct";
+import AddModal from "./addStock";
 // import UpdateModal from "./updateProduct";
 import {Link, useNavigate} from "react-router-dom";
 
 function PlusButton() {
-    const [showcreate, setShowCreate] = useState(false);
-
     return (
         <>
-            <button onClick={() => setShowCreate(true)} className="btn-primary">
+            <button className="btn-primary">
                 <Link to={`/products`} className="btn-primary"> 
                     <img alt="home" src={plus}/> ADD NEW PRODUCT
                 </Link>
@@ -22,7 +20,6 @@ function PlusButton() {
 function StockTable(props){
     const [ columns, setColumns ] = useState([]);
     const [ records, setRecords ] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(()=> {
         axios.get('http://localhost:3030/products').then(res => {
