@@ -1,10 +1,10 @@
 import "./main-page.css"
-import pos from "../images/pos.svg"
-import box from "../images/box.svg"
-import home from "../images/home.svg"
-import sales from "../images/sales.svg"
-import stock from "../images/stock.svg"
-import report from "../images/report.svg"
+import pos from "./images/pos.svg"
+import box from "./images/box.svg"
+import home from "./images/home.svg"
+import sales from "./images/sales.svg"
+import stock from "./images/stock.svg"
+import report from "./images/report.svg"
 import { Link } from 'react-router-dom';
 
 function NavList(){

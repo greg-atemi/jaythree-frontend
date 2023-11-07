@@ -4,8 +4,8 @@ import './main-page.css';
 import Sidebar from "./sidebar";
 import Topbar from "./topbar";
 import Dashboard from "./dashboard";
-import Products from "./products";
-import UpdateProduct from "./updateProduct";
+import Products from './product/products';
+import UpdateProduct from "./product/updateProduct";
 
 function Index() {
     return (

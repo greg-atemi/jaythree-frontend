@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import plus from "../images/plus.svg";
+import plus from "./images/plus.svg";
 import axios from "axios";
 import CreateModal from "./createProduct";
 import UpdateModal from "./updateProduct";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function PlusButton() {
     const [showcreate, setShowCreate] = useState(false);
@@ -52,10 +52,7 @@ function ProductsTable(props){
                             <td>{d.UnitPrice}</td>
                             <td>{d.Description}</td>
                             <td style={{display: "flex"}}>
-                                {/*<Link to={`/product/update/${d.id}`} className="btn-primary"> Update </Link>*/}
-                                <button onLoad={() => props=d} onClick={() => setShowUpdate(true)} className="btn-primary">
-                                    UPDATE
-                                </button>
+                                <Link to={`/product/update/${d.id}`} className="btn-primary"> Update </Link>
                                 <button onClick={e => handleDelete(d.id)} className="btn-primary">DELETE</button>
                             </td>
                         </tr>
@@ -63,7 +60,6 @@ function ProductsTable(props){
                 }
             </tbody>
         </table>
-        <UpdateModal onClose={() => setShowUpdate(false)} show={showupdate}/>
         </>
     )
 
