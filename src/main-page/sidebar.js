@@ -11,7 +11,7 @@ function NavList(){
     const links = [
         {id: 1, name: "Dashboard", path:"/", src: home},
         {id: 2, name: "Product", path:"/products", src: box},
-        {id: 3, name: "POS", src: pos},
+        {id: 3, name: "POS", path:"/pos", src: pos},
         {id: 4, name: "Stock", path:"/stock", src: stock},
         {id: 5, name: "Sales", src: sales},
         {id: 6, name: "Daily Reports", src: report},
