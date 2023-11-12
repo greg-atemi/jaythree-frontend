@@ -37,9 +37,12 @@ function ProductsTable(props){
         <table className="product">
             <thead>
                 <tr>
-                    {columns.map((c, i) => (
-                        <th key={i}> {c} </th>
-                    ))}
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
