@@ -212,3 +212,9 @@ td{
 td .icon{
     margin-right: 16px;
 }
+
+.parent-form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

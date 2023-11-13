@@ -12,34 +12,63 @@ function POSForm() {
 
     return (
         <>
-            <form>
-                <div>
-                    <select onChange={(e) => setOptions(e.target.value)}> 
-                        {
-                            values.map((opts,i) => <option>{opts.Name}</option>)
-                        }
-                    </select>
-                </div>
-                <div>
-                    <input className="input" type="number" name="quantity" id="quantity"
-                        min="1" required>
-                    </input>
-                </div>
-            </form>
-            <h1>{options}</h1>
-            <button className="btn-primary">
-                <Link to={`/products`} className="btn-primary"> 
-                    <img alt="home" src={plus}/> ADD NEW PRODUCT
-                </Link>
-            </button>
+            <div className='parent-form'>
+                <form>
+                    <div>
+                        <select onChange={(e) => setOptions(e.target.value)}> 
+                            {
+                                values.map((opts,i) => <option>{opts.Name}</option>)
+                            }
+                        </select>
+                        <input className="input" type="number" name="quantity" id="quantity"
+                            min="1" defaultValue={1} required>
+                        </input>
+                    </div>
+                    <div>
+                        <button className="btn-primary">
+                            <img alt="home" src={plus}/>
+                            ADD PRODUCT
+                        </button>
+                    </div>
+                </form>
+            </div>
         </>
     )
+}
+
+function POSTable(props){
+    const [ records, setRecords ] = useState([]);
+
+    return (
+        <>
+        <table className="product">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Quantity</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            {/* <tbody>
+                <tr key={i}>
+                    <td>{d.id}</td>
+                    <td>{d.Name}</td>
+                    <td>{d.Quantity}</td>
+                </tr>
+            </tbody> */}
+        </table>
+        </>
+    )
+
 }
 
 export default function Pos() {
     return (
         <div className="main">
             <POSForm />
+            <POSTable />
         </div>
     );
 }
