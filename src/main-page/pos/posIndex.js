@@ -2,20 +2,51 @@ import React, { useEffect, useState } from 'react';
 import plus from "./images/plus.svg";
 import {Link} from "react-router-dom";
 
-function POSForm() {
+function POS() {
     const [values, setValues] = useState([])
     const [options, setOptions] = useState([])
+
+    const [formData, setFormData] = useState({
+        id: '',
+        quantity: '',
+        name: '',
+        price: '',
+        total: ''
+      });
 
     useEffect(() => {
         fetch('http://localhost:3030/products').then((data) => data.json()).then((val) => setValues(val))
     }, [])
 
+    const [tableData, setTableData] = useState([]);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({...formData,[name]: value,});
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        // Update table data with new form data
+        setTableData([...tableData, formData]);
+
+        // Clear the form after submission
+        setFormData({
+            id: '',
+            quantity: '',
+            name: '',
+            price: '',
+            total: ''
+        });
+    };
+
     return (
         <>
             <div className='parent-form'>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
-                        <select onChange={(e) => setOptions(e.target.value)}> 
+                        <select onChange={(e) => setOptions(e.target.value)} name='Name'> 
                             {
                                 values.map((opts,i) => <option>{opts.Name}</option>)
                             }
@@ -32,43 +63,36 @@ function POSForm() {
                     </div>
                 </form>
             </div>
+    
+            <table className="product">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Quantity</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableData.map((data, index) => (
+                        <tr key={index}>
+                        <td>{data.quantity}</td>
+                        <td>{data.name}</td>
+                        <td>{data.price}</td>
+                        <td>{data.total=data.price*data.quantity}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </>
     )
-}
-
-function POSTable(props){
-    const [ records, setRecords ] = useState([]);
-
-    return (
-        <>
-        <table className="product">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Quantity</th>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            {/* <tbody>
-                <tr key={i}>
-                    <td>{d.id}</td>
-                    <td>{d.Name}</td>
-                    <td>{d.Quantity}</td>
-                </tr>
-            </tbody> */}
-        </table>
-        </>
-    )
-
 }
 
 export default function Pos() {
     return (
         <div className="main">
-            <POSForm />
-            <POSTable />
+            <POS />
         </div>
     );
 }
